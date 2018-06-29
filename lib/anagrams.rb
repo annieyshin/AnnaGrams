@@ -20,7 +20,7 @@ word_two_mod = @word_two.to_s.downcase()
 #2. check if the words contain vowels
 if word_one_mod.chars.sort == word_two_mod.chars.sort
   word_types = "anagrams"
-else word_types = "not equal"
+else word_types = "not anagrams"
 end
 #3. check if anagrams or antigrams
     endOutput = ""
