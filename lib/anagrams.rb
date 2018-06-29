@@ -8,7 +8,7 @@ class Word
 # word_one_mod = @word_one.gsub!(/[^0-9A-Za-z]/, '')
 word_one_mod = @word_one.to_s.downcase()
 # puts word_one_mod
-if !word_one_mod.match("aeiouy")
+if word_one_mod.scan(/[aeiouy]/).count >= 1
   puts "you have a vowel"
 else
   puts "you have no vowels"
