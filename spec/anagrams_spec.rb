@@ -21,6 +21,10 @@ describe('#anagrams') do
   end
   it('compares two words to see if bbb and ttt are anagrams') do
     word_check = Word.new("bbb", "ttt")
-    expect(word_check.anagram_check()).to(eq("bbb and ttt are not equal"))
+    expect(word_check.anagram_check()).to(eq("you need to put in actual words"))
+  end
+  it('compares two words to see if bbb and ttt are anagrams') do
+    word_check = Word.new("ccc", "ppp")
+    expect(word_check.anagram_check()).to(eq("you need to put in actual words"))
   end
 end

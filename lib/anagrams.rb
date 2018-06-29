@@ -11,7 +11,7 @@ word_one_mod = @word_one.to_s.downcase()
 if word_one_mod.scan(/[aeiouy]/).count >= 1
   puts "you have a vowel"
 else
-  puts "you have no vowels"
+  puts "you need to put in actual words"
 end
 puts "here you are"
 # word_two_mod = @word_two.gsub!(/[^0-9A-Za-z]/, '')
@@ -24,7 +24,11 @@ else word_types = "not equal"
 end
 #3. check if anagrams or antigrams
     endOutput = ""
+    if word_one_mod.scan(/[aeiouy]/).count < 1
+    endOutput = "you need to put in actual words"
+    else
     endOutput = "#{word_one_mod} and #{word_two_mod} are #{word_types}"
+    end
     return endOutput
   end
 end
