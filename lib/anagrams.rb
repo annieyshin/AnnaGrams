@@ -10,10 +10,11 @@ class Word
   word_one_array = []
   word_two_array = []
 
-  .split
+
+#1. check if the words are the same
   array #figure out how to alphabetize here
-
-
+#2. check if the words are actual dictionary words
+#3. check if anagrams or antigrams
 
 
     endOutput = ""
