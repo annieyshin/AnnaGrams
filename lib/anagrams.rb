@@ -6,24 +6,20 @@ class Word
   def anagram_check()
   word_one = "eat"
   word_two = "ate"
+  word_types = ""
+  word_one_array = []
+  word_two_array = []
+
+  .split
+  array #figure out how to alphabetize here
 
 
 
 
-
-    changeOutput = ""
-    if quarters != 0
-      changeOutput = changeOutput + "#{quarters} quarters "
+    endOutput = ""
+    if word_one_array == word_two_array
+      endOutput = "The words #{word_one} and #{word_two} are #{word_types}"
     end
-    if dimes != 0
-      changeOutput = changeOutput + "#{dimes} dimes "
-    end
-    if nickels != 0
-      changeOutput = changeOutput + "#{nickels} nickels "
-    end
-    if pennies != 0
-      changeOutput = changeOutput + "#{pennies} pennies."
-    end
-    return changeOutput
+    return endOutput
   end
 end
