@@ -15,4 +15,8 @@ describe('#anagrams') do
     word_check = Word.new("boohoo", "rodent")
     expect(word_check.anagram_check()).to(eq("boohoo and rodent are not equal"))
   end
+  it('compares two words to see if bOHo and hOBo are anagrams') do
+    word_check = Word.new("bOHo", "hOBo")
+    expect(word_check.anagram_check()).to(eq("boho and hobo are anagrams"))
+  end
 end
