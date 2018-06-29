@@ -4,8 +4,8 @@ class Word
     @word_two = word_two
   end
   def anagram_check()
-  @word_one = "eat"
-  @word_two = "ate"
+  # @word_one = ""
+  # @word_two = ""
   # word_one_array = []
   # word_two_array = []
   puts "hope I make it to here"
