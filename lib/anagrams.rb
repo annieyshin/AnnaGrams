@@ -2,6 +2,8 @@ class Word
   def initialize(word_one, word_two)
     @word_one = word_one
     @word_two = word_two
+    #for when you want to input more than two words USE words = %w[cars scar for four creams scream racs]
+    #anagrams = words.group_by { |word| word.chars.sort }.values
   end
   def anagram_check()
   vowel_list = ["a", "e", "i", "o", "u", "y"]
@@ -13,14 +15,13 @@ if word_one_mod.scan(/[aeiouy]/).count >= 1
 else
   puts "you need to put in actual words"
 end
-puts "here you are"
 # word_two_mod = @word_two.gsub!(/[^0-9A-Za-z]/, '')
 word_two_mod = @word_two.to_s.downcase()
-# puts word_two_mod
-#2. check if the words contain vowels
 if word_one_mod.chars.sort == word_two_mod.chars.sort
   word_types = "anagrams"
-else word_types = "not anagrams"
+elsif word_types = "not anagrams nor antigrams"
+else  word_one_mod.chars.sort != word_two_mod.chars.sort
+  word_types = "antigrams"
 end
 #3. check if anagrams or antigrams
     endOutput = ""
