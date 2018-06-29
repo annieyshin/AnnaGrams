@@ -7,16 +7,18 @@ class Word
   def anagram_check()
   @word_one = "eat"
   @word_two = "ate"
-  # word_one_array = ""
-  # word_two_array = ""
+  word_one_array = []
+  word_two_array = []
   puts "hope I make it to here"
 
 
 #1. check if the words are the same
-@word_one.gsub!(/[^0-9A-Za-z]/, '')
-@word_two.gsub!(/[^0-9A-Za-z]/, '')
+word_one_mod = @word_one.gsub!(/[^0-9A-Za-z]/, '')
+word_two_mod = @word_two.gsub!(/[^0-9A-Za-z]/, '')
+word_one_array.push(word_one_mod)
+word_two_array.push(word_two_mod)
 puts "here you are"
-if @word_one.chars.sort == @word_two.chars.sort
+if word_one_mod.chars.sort == word_two_mod.chars.sort
   word_types = "anagram"
 end
 else word_types = "not equal"
