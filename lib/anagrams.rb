@@ -19,9 +19,10 @@ end
 word_two_mod = @word_two.to_s.downcase()
 if word_one_mod.chars.sort == word_two_mod.chars.sort
   word_types = "anagrams"
-elsif word_types = "not anagrams nor antigrams"
-else  word_one_mod.chars.sort != word_two_mod.chars.sort
+elsif word_one_mod.scan(/[word_two_mod]/).count == 0
   word_types = "antigrams"
+elsif  word_one_mod.chars.sort != word_two_mod.chars.sort
+  word_types = "not anagrams nor antigrams"
 end
 #3. check if anagrams or antigrams
     endOutput = ""

@@ -35,4 +35,8 @@ describe('#anagrams') do
     word_check = Word.new("ttta", "ttt")
     expect(word_check.anagram_check()).to(eq("ttta and ttt are not anagrams nor antigrams"))
   end
+  it('compares two words to see if cat and by are anagrams') do
+    word_check = Word.new("cat", "by")
+    expect(word_check.anagram_check()).to(eq("cat and by are antigrams"))
+  end
 end
