@@ -5,16 +5,15 @@ class Word
 
   def anagram_check()
   new_array = []
-  array = @phrase.split(/\W+/)
+  i = 0
+  word_down = @phrase.downcase()
+  array = word_down.split(/\W+/)
   foo = array.each_slice(1).to_a
 
   #  word_sort = word_array.split(/\W+/)
   #  word_arrange = word_sort.sort()
   #  word_arrange.each do |word|
 
-    print foo
-
-    i = 0
   if foo.include? foo[i]
     return "you have anagrams"
   else
