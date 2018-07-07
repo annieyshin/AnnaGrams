@@ -4,8 +4,8 @@ require('anagrams')
 
 describe('#anagrams') do
   it('compares two words to see if eat and ate are anagrams') do
-    word_check = Word.new("eat, ate")
-    expect(word_check.anagram_check()).to(eq(["eat",  "ate"]))
+    word_check = Word.new("eat ! bad . ate")
+    expect(word_check.anagram_check()).to(eq(["eat, bad, ate"]))
   end
   # it('compares two words to see if ruby and bury are anagrams') do
   #   word_check = Word.new("ruby", "bury")

@@ -4,18 +4,25 @@ class Word
   end
 
   def anagram_check()
-   word_array = []
-   endOutput = {}
-  #  word_split = @phrase.split(" ")
-   word_split = @phrase.split(/\W+/)
-   word_split.each do |word|
-   key = word_array.push(word_split)
-   puts key
+  new_array = []
+   array = @phrase.split(/\W+/)
+   new_array = %w[array]
+  #  word_sort = word_array.split(/\W+/)
+  #  word_arrange = word_sort.sort()
+  #  word_arrange.each do |word|
+    puts new_array
 
 
 
 
+    # if array1 & array2 == array1
+    #   returns "these words are anagrams"
+    # else
+    #   returns "these words are not anagrams"
 
+
+
+# Consider using .include? to return true false
 
  # if endOutput.scan(/[aeiouy]/).count >= 1
  #   puts "you have a vowel"
@@ -37,6 +44,6 @@ class Word
      # endOutput = "you need to put in actual words"
      # else
      # endOutput = "these words are #{word_types}"
-   end 
+
   end
 end
