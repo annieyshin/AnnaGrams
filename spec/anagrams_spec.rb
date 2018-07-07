@@ -1,11 +1,13 @@
 require('rspec')
 require('pry')
 require('anagrams')
+require ('enumerator')
+
 
 describe('#anagrams') do
   it('compares two words to see if eat and ate are anagrams') do
     word_check = Word.new("eat ! bad . ate")
-    expect(word_check.anagram_check()).to(eq(["eat, bad, ate"]))
+    expect(word_check.anagram_check()).to(eq("you have anagrams"))
   end
   # it('compares two words to see if ruby and bury are anagrams') do
   #   word_check = Word.new("ruby", "bury")

@@ -5,12 +5,23 @@ class Word
 
   def anagram_check()
   new_array = []
-   array = @phrase.split(/\W+/)
-   new_array = %w[array]
+  array = @phrase.split(/\W+/)
+  foo = array.each_slice(1).to_a
+
   #  word_sort = word_array.split(/\W+/)
   #  word_arrange = word_sort.sort()
   #  word_arrange.each do |word|
-    puts new_array
+
+    print foo
+
+    i = 0
+  if foo.include? foo[i]
+    return "you have anagrams"
+  else
+    return "you do not have anagrams"
+    i += 1
+
+
 
 
 
@@ -37,7 +48,7 @@ class Word
  #   word_types = "antigrams"
  # elsif  word_one_mod.chars.sort != word_two_mod.chars.sort
  #   word_types = "not anagrams nor antigrams"
- # end
+ end
  #3. check if anagrams or antigrams
      # endOutput = ""
      # if word_split.scan(/[aeiouy]/).count < 1
