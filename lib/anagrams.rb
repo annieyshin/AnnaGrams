@@ -4,21 +4,47 @@ class Word
   end
 
   def anagram_check()
-  new_array = []
-  string = ""
-  i = 0
-  word_down = @phrase.downcase()
-  array = word_down.split(/\W+/)
-  word_hash = @phrase.each(Hash.new []) do |word, hash|
-    hash[word.chars.sort] += [word]
-  end
+    words = @phrase.downcase
+    word_list = @phrase.chars.to_a.join.split(/\W+/)
 
-  word_hash.each do |word, equal|
-    puts equal.join ', ' if equal.length > 1
-  end
+    hash_words = word_list.each_with_object(Hash.new []) do |word, hash|
+      hash[word.chars.sort] += [word]
+    end
+    # print hash_words
 
-  return word_hash
+    if hash_words.length > 1
+      puts "you have anagrams"
+    else
+      puts "you do not have anagrams"
+    end
 
+    # result = {}
+    #
+    # word_list.each do |word|
+    #   key = word.split('').sort.join
+    #   if result.has_key?(key)
+    #     result[key].push(word)
+    #   else
+    #     result[key] = [word]
+    #   end
+    # end
+    #
+    # result.each_value do |x|
+    #   p x
+    # end
+    #
+    # print result
+
+
+    # hash_words = hash_words.group_by { |key, value| hash_words[key] }
+    # hash_words.each_pair do |key, value|
+	  #   hash_words[key] = value.transpose.delete_at(0)
+    # end
+    #   if hash_words[word.chars.to_a.sort.join.upcase] == nil
+    #     puts "you do not have anagrams"
+    #   else
+    #     puts "you have anagrams"
+    #   end
 
 
   #  word_sort = word_array.split(/\W+/)
