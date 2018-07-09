@@ -5,18 +5,34 @@ class Word
 
   def anagram_check()
     words = @phrase.downcase
+    puts words
+
     word_list = @phrase.chars.to_a.join.split(/\W+/)
+    # puts word_list.length
+    word_list_int = word_list.length
+    puts word_list_int
+
 
     hash_words = word_list.each_with_object(Hash.new []) do |word, hash|
       hash[word.chars.sort] += [word]
     end
-    # print hash_words
 
-    if hash_words.length > 1
-      puts "you have anagrams"
+    hash_words_int = hash_words.length
+    puts hash_words_int
+
+    if word_list_int == hash_words_int
+      return "you do not have anagrams"
     else
-      puts "you do not have anagrams"
+      return "you have anagrams"
     end
+
+    # if hash_words.each_value
+    #   puts "ah ha!"
+    # else
+    #   puts "sad face"
+    # end
+    #
+    # puts hash_words
 
     # result = {}
     #
