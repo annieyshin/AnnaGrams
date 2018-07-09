@@ -5,32 +5,36 @@ class Word
 
   def anagram_check()
   new_array = []
+  string = ""
   i = 0
   word_down = @phrase.downcase()
   array = word_down.split(/\W+/)
-  foo = array.each_slice(1).to_a
+  word_hash = @phrase.each(Hash.new []) do |word, hash|
+    hash[word.chars.sort] += [word]
+  end
+
+  word_hash.each do |word, equal|
+    puts equal.join ', ' if equal.length > 1
+  end
+
+  return word_hash
+
+
 
   #  word_sort = word_array.split(/\W+/)
   #  word_arrange = word_sort.sort()
   #  word_arrange.each do |word|
-
-  if foo.include? foo[i]
-    return "you have anagrams"
-  else
-    return "you do not have anagrams"
-    i += 1
-
-
-
-
-
-
-    # if array1 & array2 == array1
-    #   returns "these words are anagrams"
-    # else
-    #   returns "these words are not anagrams"
-
-
+  #
+  # if foo[i] & foo[i +=1] == foo[i]
+  #   return "you have anagrams"
+  # else
+  #   return "you do not have anagrams"
+  #   i += 1
+  #
+  # if foo[i] & foo[i += 1] == foo[i]
+  #   returns "these words are anagrams"
+  # else
+  #   returns "these words are not anagrams"
 
 # Consider using .include? to return true false
 
@@ -47,7 +51,7 @@ class Word
  #   word_types = "antigrams"
  # elsif  word_one_mod.chars.sort != word_two_mod.chars.sort
  #   word_types = "not anagrams nor antigrams"
- end
+ # end
  #3. check if anagrams or antigrams
      # endOutput = ""
      # if word_split.scan(/[aeiouy]/).count < 1
