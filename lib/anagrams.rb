@@ -7,7 +7,7 @@ class Word
     words = @phrase.downcase
     puts words
 
-    word_list = @phrase.chars.to_a.join.split(/\W+/)
+    word_list = words.chars.to_a.join.split(/\W+/)
     # puts word_list.length
     word_list_int = word_list.length
     puts word_list_int
@@ -19,6 +19,7 @@ class Word
 
     hash_words_int = hash_words.length
     puts hash_words_int
+    puts hash_words
 
     if word_list_int == hash_words_int
       return "you do not have anagrams"
