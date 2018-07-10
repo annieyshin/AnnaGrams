@@ -5,9 +5,8 @@ class Word
 
   def anagram_check()
     words = @phrase.downcase
-    puts words
-
-    word_list = words.chars.to_a.join.split(/\W+/)
+    # word_list = words.chars.to_a.join.split(/[\s,]+/))
+    word_list = words.chars.to_a.join.split(/[^\w-]+/)
     # puts word_list.length
     word_list_int = word_list.length
     puts word_list_int
@@ -20,19 +19,28 @@ class Word
     hash_words_int = hash_words.length
     puts hash_words_int
     puts hash_words
+    puts @phrase.scan(/[aeiouy]/)
 
 
-    if word_list_int != hash_words_int
+    if word_list_int != hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
       return "you have anagrams"
-    elsif   word_list_int == hash_words_int
-      false
+    elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
+        return "you do not have anagrams nor antigrams"
+    elsif @phrase.scan(/[aeiouy]/).count < 1
+      return "you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
+    # else word_list_int != hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
+    #   return "you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
     end
 
-    if word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
-      return "you do not have anagrams"
-    elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
-      return "you do not have anagrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
-    end
+    # elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
+    #   "you do not have anagrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
+    # end
+
+    # if FILL IN WITH CONDITION FOR WHEN ANTIGRAMS && @phrase.scan(/[aeiouy]/).count >= 1
+    #   return "you have antigrams"
+    # elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
+    #   return "you do not have any anagrams OR antigrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
+    # end
 
 
 
