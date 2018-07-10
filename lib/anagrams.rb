@@ -27,65 +27,11 @@ class Word
       return "you have anagrams"
     end
 
-    # if hash_words.each_value
-    #   puts "ah ha!"
-    # else
-    #   puts "sad face"
-    # end
-    #
-    # puts hash_words
-
-    # result = {}
-    #
-    # word_list.each do |word|
-    #   key = word.split('').sort.join
-    #   if result.has_key?(key)
-    #     result[key].push(word)
-    #   else
-    #     result[key] = [word]
-    #   end
-    # end
-    #
-    # result.each_value do |x|
-    #   p x
-    # end
-    #
-    # print result
-
-
-    # hash_words = hash_words.group_by { |key, value| hash_words[key] }
-    # hash_words.each_pair do |key, value|
-	  #   hash_words[key] = value.transpose.delete_at(0)
-    # end
-    #   if hash_words[word.chars.to_a.sort.join.upcase] == nil
-    #     puts "you do not have anagrams"
-    #   else
-    #     puts "you have anagrams"
-    #   end
-
-
-  #  word_sort = word_array.split(/\W+/)
-  #  word_arrange = word_sort.sort()
-  #  word_arrange.each do |word|
-  #
-  # if foo[i] & foo[i +=1] == foo[i]
-  #   return "you have anagrams"
-  # else
-  #   return "you do not have anagrams"
-  #   i += 1
-  #
-  # if foo[i] & foo[i += 1] == foo[i]
-  #   returns "these words are anagrams"
-  # else
-  #   returns "these words are not anagrams"
-
-# Consider using .include? to return true false
-
- # if endOutput.scan(/[aeiouy]/).count >= 1
- #   puts "you have a vowel"
- # else
- #   puts "you need to put in actual words"
- # end
+ if hash_words.scan(/[aeiouy]/).count >= 1
+   true
+ else
+   puts "you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y"
+ end
 
  # word_two_mod = @word_two.gsub!(/[^0-9A-Za-z]/, '')
 
