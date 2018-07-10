@@ -21,17 +21,22 @@ class Word
     puts hash_words_int
     puts hash_words
 
-    if word_list_int == hash_words_int
-      return "you do not have anagrams"
-    else
+
+    if word_list_int != hash_words_int
       return "you have anagrams"
+    elsif   word_list_int == hash_words_int
+      false
     end
 
- if hash_words.scan(/[aeiouy]/).count >= 1
-   true
- else
-   puts "you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y"
- end
+    if word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
+      return "you do not have anagrams"
+    elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
+      return "you do not have anagrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
+    end
+
+
+
+
 
  # word_two_mod = @word_two.gsub!(/[^0-9A-Za-z]/, '')
 

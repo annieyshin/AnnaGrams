@@ -18,13 +18,17 @@ describe('#anagrams') do
     expect(word_check.anagram_check()).to(eq("you do not have anagrams"))
   end
   it('compares two words to see if bOHo and hOBo are anagrams') do
-    word_check = Word.new("bOHo hOBo")
+    word_check = Word.new("bOHo, hOBo")
     expect(word_check.anagram_check()).to(eq("you have anagrams"))
   end
-  # it('compares two words to see if bbb and ttt are anagrams') do
-  #   word_check = Word.new("bbb", "ttt")
-  #   expect(word_check.anagram_check()).to(eq("you need to put in actual words"))
-  # end
+  it('compares two words to see if bbb and tot are words') do
+    word_check = Word.new("bbb tot")
+    expect(word_check.anagram_check()).to(eq("you do not have anagrams"))
+  end
+  it('compares two words to see if build and zzzXXZZZzz are words') do
+    word_check = Word.new("zzzXXZZZzz ttt")
+    expect(word_check.anagram_check()).to(eq("you do not have anagrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "))
+  end
   # it('compares two words to see if bbb and ttt are anagrams') do
   #   word_check = Word.new("ccc", "ppp")
   #   expect(word_check.anagram_check()).to(eq("you need to put in actual words"))
