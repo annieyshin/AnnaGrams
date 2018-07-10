@@ -31,7 +31,7 @@ describe('#anagrams') do
   end
   it('compares two words to see if b!b-b and tp-tptp are anagrams') do
     word_check = Word.new("qQttp! tp-tptp")
-    expect(word_check.anagram_check()).to(eq("you do not have anagrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "))
+    expect(word_check.anagram_check()).to(eq("you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "))
   end
   # it('compares two words to see if naive and evian are anagrams') do
   #   word_check = Word.new("naive", "evian")

@@ -6,7 +6,7 @@ class Word
   def anagram_check()
     words = @phrase.downcase
     # word_list = words.chars.to_a.join.split(/[\s,]+/))
-    word_list = words.chars.to_a.join.split(/[^\w-]+/)
+    word_list = words.chars.to_a.join.split(/[^\w]+/)
     # puts word_list.length
     word_list_int = word_list.length
     puts word_list_int
@@ -21,45 +21,17 @@ class Word
     puts hash_words
     puts @phrase.scan(/[aeiouy]/)
 
-
     if word_list_int != hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
       return "you have anagrams"
     elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
         return "you do not have anagrams nor antigrams"
-    elsif @phrase.scan(/[aeiouy]/).count < 1
+    elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
       return "you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
-    # else word_list_int != hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
-    #   return "you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
-    end
-
-    # elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count >= 1
-    #   "you do not have anagrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
-    # end
-
-    # if FILL IN WITH CONDITION FOR WHEN ANTIGRAMS && @phrase.scan(/[aeiouy]/).count >= 1
+    # elsif hash_words && @phrase.scan(/[aeiouy]/).count >= 1
     #   return "you have antigrams"
-    # elsif word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
+    # else word_list_int == hash_words_int && @phrase.scan(/[aeiouy]/).count < 1
     #   return "you do not have any anagrams OR antigrams, and you need to put in actual words, a word needs to have a vowel (a, i, e, o, u) or y "
-    # end
-
-
-
-
-
- # word_two_mod = @word_two.gsub!(/[^0-9A-Za-z]/, '')
-
- #   word_types = "anagrams"
- # elsif word_one_mod.scan(/[word_two_mod]/).count == 0
- #   word_types = "antigrams"
- # elsif  word_one_mod.chars.sort != word_two_mod.chars.sort
- #   word_types = "not anagrams nor antigrams"
- # end
- #3. check if anagrams or antigrams
-     # endOutput = ""
-     # if word_split.scan(/[aeiouy]/).count < 1
-     # endOutput = "you need to put in actual words"
-     # else
-     # endOutput = "these words are #{word_types}"
+    end
 
   end
 end
